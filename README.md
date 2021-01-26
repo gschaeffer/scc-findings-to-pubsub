@@ -77,12 +77,11 @@ With the Findings in Cloud Logging all the normal tools are available to setup M
 
 #### Cleanup
 
-To remove the resources installed use the same setup command with `delete` argument and `gcloud` to remove the cloud function.
+To remove the resources installed use the same setup command with `delete` argument and `gcloud` to remove the cloud function. Change the function name and region variables as needed.
 
 ```bash
 ./setup.sh delete
 
-# Change the function name and region variables as needed.
 FUNCTION="scc_notification_handler"
 REGION="us-central1"
 
