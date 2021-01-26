@@ -41,8 +41,7 @@ To run the scripts you will need the following.
 
 [![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://ssh.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fgschaeffer%2Fscc_alerts&cloudshell_git_branch=main)
 
-Clone the repo to Cloud Shell.
-Optionally, clone to a VM or your local machine if you prefer.
+Clone the repo to Cloud Shell. Optionally, clone to a VM or your local machine if you prefer.
 ```bash
 git clone https://github.com/gschaeffer/scc_notifications
 ```
@@ -79,7 +78,7 @@ This will install a very simple Python function that will be triggered by findin
 
 With the Findings in Cloud Logging all the normal tools are available to setup Metrics and Alerts, https://cloud.google.com/monitoring/alerts. 
 
-#### Cleanup
+#### Cleanus
 
 To remove the resources installed use the same setup command with `delete` argument and `gcloud` to remove the cloud function.
 
@@ -88,10 +87,5 @@ To remove the resources installed use the same setup command with `delete` argum
 
 FUNCTION="scc_notification_handler"
 REGION="us-central1"
-gcloud functions delete $FUNCTION --region $REGION```
-
-```
-
-```
-
+gcloud functions delete $FUNCTION --region $REGION
 ```
