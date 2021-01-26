@@ -4,8 +4,9 @@
 </h1>
 <p align="center">
   <a href="#features">Features</a> •
-    <a href="#requirements">Requirements</a> •
-  <a href="#installation">Installation</a>
+  <a href="#requirements">Requirements</a> • 
+  <a href="#installation">Installation</a> •
+  <a href="#cleanup">Cleanup</a>
 </p>
 
 
