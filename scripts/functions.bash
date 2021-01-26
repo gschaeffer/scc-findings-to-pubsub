@@ -28,7 +28,9 @@ function deleteTopic(){
 function topicExists(){
     # ARGS (IN ORDER): 
     #   1 = TOPIC
-    result=$(gcloud pubsub topics list | grep $1)
+    # result=$(gcloud pubsub topics list | grep $1)
+    FILTER="name:projects/$PROJECT_ID/topics/$1"
+    result=$(gcloud pubsub topics list --filter=$FILTER)
     if $result > 0; then
         return 1
     else

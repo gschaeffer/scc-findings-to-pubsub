@@ -12,16 +12,16 @@ _mainScript_() {
       gcloud pubsub topics add-iam-policy-binding projects/$PROJECT_ID/topics/$TOPIC --member "serviceAccount:"$SA_ACCOUNT --role $SA_ROLE_PUBSUB  > /dev/null
       gcloud organizations add-iam-policy-binding $ORG --member "serviceAccount:"$SA_ACCOUNT --role $SA_ROLE_SCC  > /dev/null
 
-      # create NotificationConfig for DLP (filter)
-      CFG_DLP_NAME="dlp_config"
-      CFG_DLP_DESC="dlp_service_notification_config"
-      CFG_DLP_FILTER="state=\"ACTIVE\""
+      # create NotificationConfig (filter)
+      CFG_NAME="default_config"
+      CFG_DESC="default_service_notification_config"
+      CFG_FILTER="state=\"ACTIVE\""
 
-      gcloud scc notifications create $CFG_DLP_NAME \
+      gcloud scc notifications create $CFG_NAME \
         --organization $ORG \
-        --description $CFG_DLP_DESC \
+        --description $CFG_DESC \
         --pubsub-topic "projects/$PROJECT_ID/topics/$TOPIC" \
-        --filter $CFG_DLP_FILTER
+        --filter $CFG_FILTER
     fi
   else
     echo ${bold}"Removing resources..."${reset}
