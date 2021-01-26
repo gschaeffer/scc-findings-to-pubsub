@@ -78,7 +78,7 @@ This will install a very simple Python function that will be triggered by findin
 
 With the Findings in Cloud Logging all the normal tools are available to setup Metrics and Alerts, https://cloud.google.com/monitoring/alerts. 
 
-#### Cleanus
+#### Cleanup
 
 To remove the resources installed use the same setup command with `delete` argument and `gcloud` to remove the cloud function.
 
