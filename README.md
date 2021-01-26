@@ -9,6 +9,7 @@
   <a href="#installation">Installation</a> •
   <a href="#cleanup">Cleanup</a>
 </p>
+
 ## Features
 
 This Security Command Center (SCC) Alerts project extends the default behavior of SCC Findings to add the ability to setup Alerts using Cloud Monitoring.
