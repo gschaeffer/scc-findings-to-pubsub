@@ -2,6 +2,7 @@
 <img src="img/alert1b.png" alt="SCC Alerts">
 <br>SCC Notifications to Alerts
 </h1>
+<h5 align="center">Setup Alerts for Google Cloud Security Command Center Findings</h5>
 <p align="center">
   <a href="#features">Features</a> •
   <a href="#requirements">Requirements</a> • 
