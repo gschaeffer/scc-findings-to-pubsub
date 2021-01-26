@@ -42,7 +42,7 @@ To run the scripts you will need the following.
 
 ### Clone the repository 
 
-[![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://ssh.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fgschaeffer%2Fscc_notifications&cloudshell_git_branch=main)
+[![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://ssh.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fgschaeffer%2Fscc_alerts&cloudshell_git_branch=main)
 
 Clone the repo to Cloud Shell.
 Optionally, clone to a VM or your local machine if you prefer.
