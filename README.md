@@ -29,7 +29,10 @@ To run the scripts you will need the following.
 - **Organization ID**
 - **Project ID** - where the resources will be installed
 - **Service Account** - a service account for SCC Notifications to run
-- Security Command Center API must be enabled
+- The API's below must be enabled for the project
+  - Security Command Center API for the Organization
+  - Cloud Build API
+  - Cloud Functions API
 - You will need IAM security roles of 
   - Security Center Admin - to setup notifications
   - Organization Admin - to setup the service account with needed roles
@@ -42,7 +45,7 @@ To run the scripts you will need the following.
 
 Clone the repo to Cloud Shell. Optionally, clone to a VM or your local machine if you prefer.
 ```bash
-git clone https://github.com/gschaeffer/scc_notifications
+git clone https://github.com/gschaeffer/scc_alerts
 ```
 
 #### Edit variables
@@ -57,20 +60,27 @@ SA_ACCOUNT="YOUR_SERVICE_ACCOUNT"
 
 #### Run setup
 
-First, we install the SCC Notifications to PubSub as described by Google [1 above].  Use the setup.sh command which automates this process.
+First, we install the SCC Notifications to PubSub as described by Google [1 above].  Use the setup.sh command which automates this process. Be sure that your gcloud config is set to your project ID.
 
 ```bash
+gcloud config set core/project YOUR_PROJECT_ID
+
 ./setup.sh apply
+
+# if prompted with 'API [securitycenter.googleapis.com] not enabled 
+#   on project. Would you like to enable and retry?', select 'y'.
 ```
 
 This creates only the resources as described in the SCC Notifications doc [1]. At this point you should begin seeing notifications being sent to the PubSub topic as they are identified in SCC.
 
 #### Add a Cloud Function
 
-Second, to make Findings events available in Cloud Monitoring, install the provided Cloud Function. This will begin sending Findings from PubSub to Cloud Logging & Cloud Monitoring.
+Second, to make Findings events available in Cloud Monitoring, install the provided Cloud Function. This will begin sending Findings from PubSub to Cloud Logging & Cloud Monitoring. The install script is in the functions directory.
 
 ```bash
-./functions/deploy_logger_func.sh
+cd functions/
+
+./deploy_logger_func.sh
 ```
 
 This will install a very simple Python function that will be triggered by Findings being added to the PubSub Topic. After installing you should begin seeing log entries in Cloud Logging. These entries are logged into a log named *scc_notifications_log* for easy search. 

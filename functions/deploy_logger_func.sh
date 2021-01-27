@@ -8,7 +8,7 @@ LABELS="app=scc_notifications"
 MEMORY=256MB
 REGION=us-central1
 SOURCE_DIR="logger/"
-TOPIC=scc_notifications
+TOPIC="scc_notifications"
 
 gcloud functions deploy $NAME \
     --entry-point $ENTRY_POINT \
