@@ -23,13 +23,16 @@
 # ----------------------------------
 # SET CONFIG'S/VARIABLES HERE...
 # ----------------------------------
+
+# Change the next three vars.
 ORG="INSERT_ORG_ID"
-APP="scc-notifications"
 PROJECT_ID="INSERT_PROJECT_ID"
+SA_ACCOUNT="INSERT_SERVICE_ACCOUNT_EMAIL"
+
+
+APP="scc-notifications".
 TOPIC="scc-notifications"
 SUBSCRIPTION="scc-notifications"
-
-SA_ACCOUNT="INSERT_SERVICE_ACCOUNT_EMAIL"
 SA_ROLE_PUBSUB="roles/pubsub.admin"
 SA_ROLE_SCC="roles/securitycenter.notificationConfigEditor"
 

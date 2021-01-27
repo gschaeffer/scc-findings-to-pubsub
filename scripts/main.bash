@@ -2,6 +2,8 @@
 
 _mainScript_() {
 
+  CFG_NAME="default_config"-$PROJECT_ID
+
   if [ $ACTION = "apply" ]; then
     echo ${bold}"Applying resources in organization [$ORG]..."${reset}
     if topicExists $TOPIC; then
@@ -13,7 +15,6 @@ _mainScript_() {
       gcloud organizations add-iam-policy-binding $ORG --member "serviceAccount:"$SA_ACCOUNT --role $SA_ROLE_SCC  > /dev/null
 
       # create NotificationConfig (filter)
-      CFG_NAME="default_config"
       CFG_DESC="default_service_notification_config"
       CFG_FILTER="state=\"ACTIVE\""
 
@@ -27,6 +28,7 @@ _mainScript_() {
     echo ${bold}"Removing resources..."${reset}
     gcloud pubsub subscriptions delete $SUBSCRIPTION
     deleteTopic $TOPIC 1
+    gcloud scc notifications delete $CFG_NAME --organization $ORG 
   fi
 
   echo ${bold}"Script complete."${reset}
