@@ -30,7 +30,7 @@ PROJECT_ID="INSERT_PROJECT_ID"
 SA_ACCOUNT="INSERT_SERVICE_ACCOUNT_EMAIL"
 
 
-APP="scc-notifications".
+APP="scc-notifications"
 TOPIC="scc-notifications"
 SUBSCRIPTION="scc-notifications"
 SA_ROLE_PUBSUB="roles/pubsub.admin"
