@@ -15,7 +15,7 @@ _mainScript_() {
       gcloud organizations add-iam-policy-binding $ORG --member "serviceAccount:"$SA_ACCOUNT --role $SA_ROLE_SCC  > /dev/null
 
       # create NotificationConfig (filter)
-      CFG_DESC="default_service_notification_config"
+      CFG_DESC="scc_notifications_2_alerts_config"
       CFG_FILTER="state=\"ACTIVE\""
 
       gcloud scc notifications create $CFG_NAME \
