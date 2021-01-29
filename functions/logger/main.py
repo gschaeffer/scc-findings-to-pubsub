@@ -1,3 +1,4 @@
+import json
 from google.cloud import logging
 
 
@@ -21,9 +22,17 @@ def scc_notification_handler(event, context):
 
     try:
         # PubSub messages come in encrypted
-        data = base64.b64decode(event['data']).decode('utf-8')
+        dataString = base64.b64decode(event['data']).decode('utf-8')
     except Exception as e:
-        data = "error decoding payload"
+        dataString = "error decoding payload"
+
+    data = dataString
+    try:
+        # is valid json?
+        data = json.loads(dataString)
+    except Exception as e:
+        # nope
+        data = dataString
 
     logger.log_struct(
         {

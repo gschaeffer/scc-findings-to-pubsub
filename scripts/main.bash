@@ -25,6 +25,9 @@ _mainScript_() {
         --description $CFG_DESC \
         --pubsub-topic "projects/$PROJECT_ID/topics/$TOPIC" \
         --filter $CFG_FILTER
+
+      # Test message
+      gcloud pubsub topics publish $TOPIC --message "{\"welcome\": {\"app\": \"$APP\", \"next\": \"Install the logging Cloud Function\"}}"
     fi
   else
     echo ${bold}"Removing resources..."${reset}
