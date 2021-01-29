@@ -25,12 +25,12 @@
 # ----------------------------------
 
 # Change the next three vars.
-ORG="INSERT_ORG_ID"
-PROJECT_ID="INSERT_PROJECT_ID"
-SA_ACCOUNT="INSERT_SERVICE_ACCOUNT_EMAIL"
+ORG="INSERT_ORG_ID_HERE"
+PROJECT_ID="INSERT_PROJECT_ID_HERE"
+SA_ACCOUNT="INSERT_SERVICE_ACCOUNT_EMAIL_HERE"
 
 
-APP="scc-notifications"
+APP="scc-notifications_2_alerts"
 TOPIC="scc-notifications"
 SUBSCRIPTION="scc-notifications"
 SA_ROLE_PUBSUB="roles/pubsub.admin"

@@ -4,7 +4,7 @@
 
 NAME=scc_notification_handler
 ENTRY_POINT=scc_notification_handler
-LABELS="app=scc_notifications"
+LABELS="app=scc_notifications_2_alerts"
 MEMORY=256MB
 REGION=us-central1
 SOURCE_DIR="logger/"

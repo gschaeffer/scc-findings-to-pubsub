@@ -3,7 +3,7 @@
 _mainScript_() {
 
   CFG_NAME="default_config"-$PROJECT_ID
-  CFG_DESC="scc_notifications_2_alerts_config"
+  CFG_DESC="scc_notifications_2_alerts_app"-$PROJECT_ID
 
   if [ $ACTION = "apply" ]; then
     echo ${bold}"Applying resources in organization [$ORG]..."${reset}
@@ -16,7 +16,7 @@ _mainScript_() {
         --member "serviceAccount:"$SA_ACCOUNT \
         --role $SA_ROLE_PUBSUB  > /dev/null
       gcloud organizations add-iam-policy-binding $ORG \
-        --member "serviceAccount:"$SA_ACCOUNT 
+        --member "serviceAccount:"$SA_ACCOUNT \
         --role $SA_ROLE_SCC  > /dev/null
 
       # create NotificationConfig (filter)
@@ -31,7 +31,7 @@ _mainScript_() {
     gcloud pubsub subscriptions delete $SUBSCRIPTION
     deleteTopic $TOPIC 1
     gcloud organizations remove-iam-policy-binding $ORG \
-      --member "serviceAccount:"$SA_ACCOUNT 
+      --member "serviceAccount:"$SA_ACCOUNT \
       --role $SA_ROLE_SCC
     gcloud scc notifications delete $CFG_NAME --organization $ORG 
   fi
