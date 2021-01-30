@@ -85,7 +85,7 @@ cd functions/
 
 This will install a very simple Python function that will be triggered by Findings being added to the PubSub Topic. After installing you should begin seeing log entries in Cloud Logging. These entries are logged into a log named *scc_notifications_log* for easy search. 
 
-With the Findings in Cloud Logging all the normal tools are available to setup Metrics and Alerts, https://cloud.google.com/monitoring/alerts. 
+With the Findings in Cloud Logging, all the normal Google Cloud tools & services are available to setup Metrics and Alerts, https://cloud.google.com/monitoring/alerts. If you'd like to work with this data in BigQuery, Cloud Storage, or even another PubSub Topic then you can use Logging Exports https://cloud.google.com/logging/docs/export to push the data to your preference.
 
 #### Cleanup
 
