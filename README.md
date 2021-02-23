@@ -87,6 +87,10 @@ This will install a very simple Python function that will be triggered by Findin
 
 With the Findings in Cloud Logging, all the normal Google Cloud tools & services are available to setup Metrics and Alerts, https://cloud.google.com/monitoring/alerts. If you'd like to work with this data in BigQuery, Cloud Storage, or even another PubSub Topic then you can use Logging Exports https://cloud.google.com/logging/docs/export to push the data to your preference.
 
+##### Slack Message Integration
+
+Optionally, a Slack Message integration is available at https://github.com/gschaeffer/scc-slack-messages. 
+
 #### Cleanup
 
 To remove the resources installed use the same setup command with `delete` argument and `gcloud` to remove the cloud function. Change the function name and region variables as needed.
