@@ -30,9 +30,9 @@ PROJECT_ID="INSERT_PROJECT_ID_HERE"
 SA_ACCOUNT="INSERT_SERVICE_ACCOUNT_EMAIL_HERE"
 
 
-APP="scc-notifications_2_alerts"
-TOPIC="scc-notifications"
-SUBSCRIPTION="scc-notifications"
+APP="scc-findings-to-pubsub"
+TOPIC="scc-findings"
+SUBSCRIPTION="scc-findings"
 SA_ROLE_PUBSUB="roles/pubsub.admin"
 SA_ROLE_SCC="roles/securitycenter.notificationConfigEditor"
 
