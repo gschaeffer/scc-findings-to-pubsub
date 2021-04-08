@@ -28,7 +28,7 @@ To run the scripts you will need the following.
 
 - **Organization ID**
 - **Project ID** - where the resources will be installed
-- **Service Account** - a service account for SCC Notifications to run
+- **Service Account** - a service account for SCC Notifications to run. Roles will be assigned via setup.sh
 - The API's below must be enabled for the project
   - Security Command Center API for the Organization
   - Cloud Build API
@@ -48,6 +48,18 @@ Clone the repo to Cloud Shell. Optionally, clone to a VM or your local machine i
 git clone https://github.com/gschaeffer/scc_alerts
 ```
 
+#### Enable services
+
+Enable the services as needed. 
+
+```bash
+# Security Command Center API 
+gcloud services enable securitycenter.googleapis.com
+
+# Below is likely already enabled
+# cloudfunctions.googleapis.com
+```
+
 #### Edit variables
 
 Edit the script variables in the setup.sh file. You must edit the organization id, project id, and service account values. The remaining variables are optional.
@@ -64,6 +76,8 @@ First, we install the SCC Notifications to PubSub as described by Google [1 abov
 
 ```bash
 gcloud config set core/project YOUR_PROJECT_ID
+# optionally, confirm the project is set correctly
+# gcloud config list
 
 ./setup.sh apply
 
